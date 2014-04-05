@@ -1,0 +1,17 @@
+<%= simple_form_for @bill_service, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :category %>
+  <%= f.input :bill_description %>
+  <%= f.input :bill_no %>
+  <%= f.input :name_on_bill %>
+  <%= f.input :bill_address %>
+  <%= f.input :account_no %>
+  <%= f.input :bill_amount %>
+  <%= f.input :bill_due_date %>
+  <%= f.input :where_to_pay %>
+  <%= f.input :bill_account_id %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                bill_services_path, :class => 'btn' %>
+  </div>
+<% end %>

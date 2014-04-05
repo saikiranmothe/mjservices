@@ -1,0 +1,13 @@
+<%= simple_form_for @bill_account, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :account_no %>
+  <%= f.input :name_on_the_bill %>
+  <%= f.input :description %>
+  <%= f.input :user_id %>
+  <%= f.input :provider %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                bill_accounts_path, :class => 'btn' %>
+  </div>
+<% end %>

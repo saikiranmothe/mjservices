@@ -1,0 +1,16 @@
+<%= simple_form_for @bill_pay, :html => { :class => 'form-horizontal' } do |f| %>
+    <%= f.association :bill %>
+
+  <%= f.input :name %>
+  <%= f.input :bill_no %>
+  <%= f.input :bill_amount %>
+  <%= f.input :bill_due_date %>
+  <br>
+  <%= f.file_field :photo,:class => "pull-right" %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                bill_pays_path, :class => 'btn' %>
+  </div>
+<% end %>

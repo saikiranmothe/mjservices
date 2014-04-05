@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  bill_no: MyString
+  bill_amount: 1.5
+  bill_due_date: 2014-03-31
+  bill_id: 1
+
+two:
+  name: MyString
+  bill_no: MyString
+  bill_amount: 1.5
+  bill_due_date: 2014-03-31
+  bill_id: 1

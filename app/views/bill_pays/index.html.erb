@@ -1,0 +1,44 @@
+<%- model_class = BillPay -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_bill_pay_path,
+            :class => 'btn btn-primary' %>
+
+            <hr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:bill_no) %></th>
+      <th><%= model_class.human_attribute_name(:bill_amount) %></th>
+      <th><%= model_class.human_attribute_name(:bill_due_date) %></th>
+      <th><%= model_class.human_attribute_name(:bill_id) %></th>
+      <th><%= model_class.human_attribute_name(:photo) %></th>
+    
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @bill_pays.each do |bill_pay| %>
+      <tr>
+        <td><%= link_to bill_pay.id, bill_pay_path(bill_pay) %></td>
+        <td><%= bill_pay.name %></td>
+        <td><%= bill_pay.bill_no %></td>
+        <td><%= bill_pay.bill_amount %></td>
+        <td><%= bill_pay.bill_due_date %></td>
+        <td><%= bill_pay.bill_id %></td>
+        <td>   <%= image_tag bill_pay.photo.url(:small) %>
+</td>
+        <td><%=l bill_pay.created_at %></td>
+        <td>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
